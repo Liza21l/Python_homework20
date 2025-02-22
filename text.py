@@ -33,27 +33,27 @@
 # print(f"'x' зустрічається {result} разів у рядку.")
 
 
-# def search(arr, target):
-#     if not arr:
-#         return -1
+def search(arr, target):
+    if not arr:
+        return -1
     
-#     mid = len(arr) // 2
+    mid = len(arr) // 2
     
-#     if arr[mid] == target:
-#         return mid
-#     elif arr[mid] < target:
-#         result = search(arr[mid + 1:], target)
-#         return mid + 1 + result if result != -1 else -1
-#     else:
-#         return search(arr[:mid], target)
+    if arr[mid] == target:
+        return mid
+    elif arr[mid] < target:
+        result = search(arr[mid + 1:], target)
+        return mid + 1 + result if result != -1 else -1
+    else:
+        return search(arr[:mid], target)
     
-# sorted_list = [1, 3, 7, 5, 9, 11, 13, 15, 17, 19]
-# target_value = 5
+sorted_list = [1, 3, 7, 5, 9, 11, 13, 15, 17, 19]
+target_value = 7
 
-# result = search(sorted_list, target_value)
+result = search(sorted_list, target_value)
 
-# if result != -1:
-#     print(f"Значення {target_value} знайдено на індексі {result}.")
-# else:
-#     print(f"Значення {target_value} не знайдено у списку.")
+if result != -1:
+    print(f"Значення {target_value} знайдено на індексі {result}.")
+else:
+    print(f"Значення {target_value} не знайдено у списку.")
 
